@@ -46,6 +46,7 @@ jobs:
             any::callr
             any::shinytest2
             any::deSolve
+            any::attempt
 
       - name: Install shinycannon 💥 and Chrome 🌐
         run: |
