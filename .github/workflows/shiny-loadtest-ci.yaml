@@ -39,8 +39,12 @@ jobs:
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
           cache-version: 2
-          #extra-packages: |
-          #  any::shinyloadtest
+          extra-packages: |
+            any::shinyloadtest
+            any::lubridate
+            any::DT
+            any::callr
+            any::shinytest2
 
       - name: Install shinycannon 💥 and Chrome 🌐
         run: |
