@@ -67,8 +67,7 @@ record_loadtest <- function(path, timeout = 15, workers = 5) {
   target_url <- "http://127.0.0.1:3515"
   system(
     sprintf(
-      "shinycannon recording.log %s --workers %s --loaded-duration-minutes 
-2 --output-dir run1",
+      "shinycannon recording.log %s --workers %s --loaded-duration-minutes 2 --output-dir run1",
       target_url, workers
     )
   )
