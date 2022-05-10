@@ -78,7 +78,7 @@ record_loadtest <- function(path, timeout = 15, workers = 5) {
   df <- shinyloadtest::load_runs("run1")
   shinyloadtest::shinyloadtest_report(
     df,
-    "public/load-test.html",
+    "public/index.html",
     self_contained = TRUE,
     open_browser = FALSE
   )
