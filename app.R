@@ -8,15 +8,17 @@ van_der_pol <- function(t, y, mu) {
 }
 
 server <- function(input, output) {
-  output$brussels <- renderPlot({
+  output$brussels <- bindCache(
+   renderPlot({
     y0 <- c(X = input$X, Y = input$Y)
     # Not necessary to set .001 but to induce longer calculation
     times <- seq(0, 1000, .001)
     out <- ode(y0, times, van_der_pol, input$mu)
     par(mfrow = c(1, 1))
-    plot(out[,2:3], type = "l", xlab = "X", ylab = "Y", main = "state 
-diagram")
-  })
+    plot(out[,2:3], type = "l", xlab = "X", ylab = "Y", main = "state diagram")
+   }),
+    input$mu, input$X, input$Y
+  )
 }
 
 ui <- fluidPage(
